@@ -61,6 +61,8 @@ int main() {
     myList.addNode(2);
     myList.addNode(3);
     myList.addNode(10);
+    myList.addNode(10);
+    myList.addNode(10);
     myList.display();
 
     myList.deleteHead();
