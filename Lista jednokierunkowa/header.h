@@ -5,19 +5,21 @@ using namespace std;
 struct Node {
 	int value;
 	Node* next;
-
-	Node(int val) {
-		value = val;
-		next = NULL;
-	}
 };
 
 class Linkedlist {
 private:
 	Node* head;
-	Node* tail;
 public:
 	Linkedlist();
-	void addNode(int val);
-	void display();
+	void newHead(int val);
+	void popHead();
+	void newTail(int val);
+	void popTail();
+	void showList();
+	bool isEmpty();
+	int amount();
+	Node* findElement(int val);
+	void deleteElement(int val);
+	void addElement(int pos, int val);
 };
