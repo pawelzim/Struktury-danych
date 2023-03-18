@@ -3,6 +3,10 @@
 
 using namespace std;
 
+void measure_time(clock_t strt, clock_t stp) {
+	cout << static_cast<double>(stp - strt) / CLOCKS_PER_SEC << endl;
+}
+
 Linkedlist::Linkedlist() {
 	head = NULL;
 }
@@ -57,7 +61,6 @@ void Linkedlist::popTail() {
 		tmp = tmp2->next;
 		tmp2->next = NULL;
 		delete tmp;
-		//tmp2->next = NULL;
 	}
 }
 
@@ -106,6 +109,10 @@ int Linkedlist::amount() {
 }
 
 Node* Linkedlist::findElement(int val) {
+	if (head == NULL) {
+		cout << "Empty list, can't findElement" << endl;
+		return NULL;
+	}
 	Node* tmp = new Node();
 	tmp = head;
 	while (tmp != NULL) {
@@ -114,10 +121,15 @@ Node* Linkedlist::findElement(int val) {
 		}
 		tmp = tmp->next;
 	}
+	cout << "No such element on list" << endl;
 	return NULL;
 }
 
 void Linkedlist::deleteElement(int val) {
+	if (head == NULL) {
+		cout << "List is empty, can't deleteElement" << endl;
+		return;
+	}
 	Node* tmp1, * tmp2;
 	tmp1 = head;
 	tmp2 = NULL;
@@ -126,7 +138,7 @@ void Linkedlist::deleteElement(int val) {
 		tmp1 = tmp1->next;
 	}
 	//brak pasujacego elementu
-	if (tmp2 == NULL) {
+	if (tmp1 == NULL) {
 		cout << "No matching element" << endl;
 		return;
 	}
@@ -139,4 +151,33 @@ void Linkedlist::deleteElement(int val) {
 		tmp2->next = tmp1->next;
 	}
 	delete tmp1;
+}
+
+void Linkedlist::addElement(int pos, int val) {
+	if (pos > amount()) {
+		cout << "Too far, can't addElement" << endl;
+		return;
+	}
+	if (pos == 1 || head == NULL) {
+		newHead(val);
+		return;
+	}
+	if (pos == amount()) {
+		newTail(val);
+		return;
+	}
+
+	int ctr = 0;
+	Node* tmp1 = head;
+	Node* tmp2 = NULL;
+	Node* addNew = new Node();
+	addNew->value = val;
+	for (int i = 0; i < pos-1; i++) {
+		ctr++;
+		tmp2 = tmp1;
+		tmp1 = tmp1->next;
+	}
+	tmp2->next = addNew;
+	addNew->next = tmp1;
+	cout << ctr << endl;
 }
