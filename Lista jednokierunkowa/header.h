@@ -23,3 +23,5 @@ public:
 	void deleteElement(int val);
 	void addElement(int pos, int val);
 };
+
+void measure_time(clock_t strt, clock_t stp);

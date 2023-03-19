@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Lista jednokierunkowa.cpp" />
     <ClCompile Include="methods.cpp" />
+    <ClCompile Include="methods2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
