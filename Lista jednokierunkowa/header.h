@@ -19,9 +19,8 @@ public:
 	void showList();
 	bool isEmpty();
 	int amount();
-	Node* findElement(int val);
-	void deleteElement(int val);
+	void deleteElement(int pos);
 	void addElement(int pos, int val);
 };
 
-void measure_time(clock_t strt, clock_t stp);
+double measure_time(clock_t strt, clock_t stp);

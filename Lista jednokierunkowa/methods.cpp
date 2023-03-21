@@ -3,8 +3,8 @@
 
 using namespace std;
 
-void measure_time(clock_t strt, clock_t stp) {
-	cout << static_cast<double>(stp - strt) / CLOCKS_PER_SEC << endl;
+double measure_time(clock_t strt, clock_t stp) {
+	return static_cast<double>(stp - strt) / CLOCKS_PER_SEC;
 }
 
 Linkedlist::Linkedlist() {
@@ -108,48 +108,33 @@ int Linkedlist::amount() {
 	return ctr;
 }
 
-Node* Linkedlist::findElement(int val) {
-	if (head == NULL) {
-		cout << "Empty list, can't findElement" << endl;
-		return NULL;
-	}
-	Node* tmp = new Node();
-	tmp = head;
-	while (tmp != NULL) {
-		if (tmp->value == val) {
-			return tmp;
-		}
-		tmp = tmp->next;
-	}
-	cout << "No such element on list" << endl;
-	return NULL;
-}
-
-void Linkedlist::deleteElement(int val) {
+void Linkedlist::deleteElement(int pos) {
 	if (head == NULL) {
 		cout << "List is empty, can't deleteElement" << endl;
+		return;
+	}
+	int am = amount();
+
+	if (pos > am) {
+		cout << "Too far, can't deleteElement" << endl;
+		return;
+	}
+	if (pos == 1 || head == NULL) {
+		popHead();
+		return;
+	}
+	if (pos == am) {
+		popTail();
 		return;
 	}
 	Node* tmp1, * tmp2;
 	tmp1 = head;
 	tmp2 = NULL;
-	while (tmp1 != NULL && tmp1->value != val) {
+	for (int i = 0; i < pos-1; i++) {
 		tmp2 = tmp1;
 		tmp1 = tmp1->next;
 	}
-	//brak pasujacego elementu
-	if (tmp1 == NULL) {
-		cout << "No matching element" << endl;
-		return;
-	}
-	//usuwanie head-a (pasujacego)
-	if (tmp2 == NULL) {
-		head = tmp1->next;
-	}
-	//usuwanie pasujacego elementu
-	else {
-		tmp2->next = tmp1->next;
-	}
+	tmp2->next = tmp1->next;
 	delete tmp1;
 }
 
@@ -179,5 +164,4 @@ void Linkedlist::addElement(int pos, int val) {
 	}
 	tmp2->next = addNew;
 	addNew->next = tmp1;
-	cout << ctr << endl;
 }
