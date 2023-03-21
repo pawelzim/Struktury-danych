@@ -139,7 +139,8 @@ void Linkedlist::deleteElement(int pos) {
 }
 
 void Linkedlist::addElement(int pos, int val) {
-	if (pos > amount()) {
+	int am = amount();
+	if (pos > am) {
 		cout << "Too far, can't addElement" << endl;
 		return;
 	}
@@ -147,7 +148,7 @@ void Linkedlist::addElement(int pos, int val) {
 		newHead(val);
 		return;
 	}
-	if (pos == amount()) {
+	if (pos == am) {
 		newTail(val);
 		return;
 	}

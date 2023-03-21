@@ -11,13 +11,13 @@ int main() {
 		l1.newHead(i);
 	}
 
-	clock_t start1 = clock();
-	l1.popTail();
-	clock_t stop1 = clock();
-	cout << l1.amount() << endl;
 	clock_t start2 = clock();
 	l1.deleteElement(499999);
 	clock_t stop2 = clock();
+	cout << l1.amount() << endl;
+	clock_t start1 = clock();
+	l1.addElement(499998, 123);
+	clock_t stop1 = clock();
 	cout << l1.amount() << endl;
 
 
