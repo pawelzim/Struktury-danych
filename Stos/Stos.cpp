@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "StosH.h"
+#include "Header.h"
 
 using namespace std;
 

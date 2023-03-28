@@ -18,12 +18,12 @@
     <ClCompile Include="Stos.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="StosM.cpp">
+    <ClCompile Include="Methods.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StosH.h">
+    <ClInclude Include="Header.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

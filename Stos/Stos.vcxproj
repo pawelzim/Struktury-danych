@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Methods.cpp" />
     <ClCompile Include="Stos.cpp" />
-    <ClCompile Include="StosM.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StosH.h" />
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
