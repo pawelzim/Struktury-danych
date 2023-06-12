@@ -363,3 +363,22 @@ MigrationBackup/
 FodyWeavers.xsd
 /Lista jednokierunkowa/methods2.cpp
 /Stos/StosH.h
+
+/Kruskal/Kruskal.sln
+/Kruskal/Kruskal.vcxproj
+/Kruskal/Kruskal.vcxproj.filters
+/Kruskal/Kruskal.vcxproj.user
+
+/Lista jednokierunkowa/Lista jednokierunkowa.sln
+/Lista jednokierunkowa/Lista jednokierunkowa.vcxproj
+/Lista jednokierunkowa/Lista jednokierunkowa.vcxproj.filters
+
+/Stos1
+
+/Stos/Stos.sln
+/Stos/Stos.vcxproj
+/Stos/Stos.vcxproj.filters
+
+/Lista dwukierunkowa/Lista dwukierunkowa.sln
+/Lista dwukierunkowa/Lista dwukierunkowa.vcxproj
+/Lista dwukierunkowa/Lista dwukierunkowa.vcxproj.filters
