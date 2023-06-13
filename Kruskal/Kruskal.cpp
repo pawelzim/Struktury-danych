@@ -9,10 +9,16 @@ using namespace std;
 int main() {
 	srand(time(NULL));
 
-	Graph graf(250);
-	graf.fillGraph(0.75);
+	Graph graf(5);
+	graf.fillGraph(1);
+	graf.createAdjacencyMatrix();
+	graf.createNeighbourHoodList();
 
-	cout << neighbourhoodList(graf) << endl;
+	graf.printGraph(1);
+
+	cout << "\n\n\n";
+
+	graf.printGraph(2);
 
 
 
